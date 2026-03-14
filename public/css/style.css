@@ -1,0 +1,15 @@
+h1{
+        background-color: aquamarine;
+        color: rgb(197, 38, 64);
+    }
+    a{
+        background-color: rgb(195, 255, 127);
+        color: rgb(202, 36, 64);
+        width: 30px;
+        padding: 10px;
+        border-radius: 5px;        
+    }
+    a:hover{
+        background-color: rgb(98, 213, 221);
+        color: rgb(151, 34, 54);
+    }

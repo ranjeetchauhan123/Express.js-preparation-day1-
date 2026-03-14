@@ -97,20 +97,95 @@
 // app.listen(port,()=>{
 // console.log('server is running');
 // })
+// .........................................................
+
+// const express = require('express')
+// const app = express()
+// const port = 3000;
+
+// app.get('/',(req,res)=>{
+
+//     res.sendFile(__dirname + '/view/index.html')
+// })
+// app.get('/about',(req,res)=>{  
+//     res.sendFile(__dirname +'/view/about.html')
+// })
+
+// app.listen(port,()=>{
+// console.log('server is running');
+// })
+// ....................................................
+
+// const express = require('express')
+// const app = express()
+// const path = require('path')
+// const port = 3000;
+
+// const filePath = path.join(__dirname, '/view')
+
+// app.get('/',(req,res)=>{
+
+//     res.sendFile(filePath + '/index.html')
+// })
+// app.get('/about',(req,res)=>{  
+//     res.sendFile(filePath + '/about.html')
+// })
+// app.use((req,res)=>{
+//     // res.status(404).send('404 page not found')
+//     res.status(404).sendFile(filePath + '/404.html')
+// })
+
+// app.listen(port,()=>{
+// console.log('server is running');
+// })
+
+
+// ...................................................................................
+
+// const express = require('express')
+// const app = express()
+// const port = 3000;
+// const path = require('path')
+
+// const filePath = path.resolve('view')
+
+// app.get('/',(req,res)=>{
+//     res.sendFile(filePath+'/index.html')    
+
+// })
+// app.get('/about',(req,res)=>{
+//     res.sendFile(filePath+'/about.html')
+// })
+
+// app.use((req,res)=>{
+//     res.status(404).sendFile(filePath+'/404.html')
+// })
+
+// app.listen(port,()=>{
+//     console.log(`server is running on port ${port}`)
+// })
+
+// rander css file......................................
 
 const express = require('express')
 const app = express()
+const path = require('path')
 const port = 3000;
 
-app.get('/',(req,res)=>{
-    
-    res.sendFile(__dirname + '/view/index.html')
-})
-app.get('/about',(req,res)=>{
-    
-    res.sendFile(__dirname +'/view/about.html')
+const filePath = path.resolve('view')
+
+const publicPath = path.resolve('public')
+app.use(express.static(publicPath))
+
+
+app.get('/',(req, res)=>{
+    res.sendFile(filePath+'/index.html')
 })
 
-app.listen(port,()=>{
-console.log('server is running');
+app.get('/about',(req, res)=>{
+    res.sendFile(filePath+'/about.html')
+})
+
+app.listen(port, () => {
+    console.log(`server is running on port ${port}`)
 })
