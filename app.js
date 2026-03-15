@@ -78,7 +78,7 @@
 // console.log('server is running');
 // })
 
-// Rander HTML and get data.................................................
+// Rander HTML .................................................
 
 // const express = require('express')
 // const app = express()
@@ -165,27 +165,56 @@
 //     console.log(`server is running on port ${port}`)
 // })
 
+// ......................................................................
+
+// const express = require('express')
+// const app = express()
+// const port = 3000;
+
+
+// app.get('/',(req, res)=>{
+//     res.send('Hello my Name is : '+req.query.name)
+// })
+
+// app.get('/help',(req, res)=>{
+//     res.send(`
+//         <input type="text" placeholder="username" name='name'value="${req.query.name}">
+//     <button>submil</button>`)
+// })
+
+// app.get('/json',(req,res)=>{
+//     res.send([
+//         {name: 'ranjeet' , age: '23'},
+//         {name: 'annu' , age: '23'}
+//     ])
+// })
+
+
+// app.listen(port, () => {
+//     console.log(`server is running on port ${port}`)
+// })
+
 // rander css file......................................
 
-const express = require('express')
-const app = express()
-const path = require('path')
-const port = 3000;
+// const express = require('express')
+// const app = express()
+// const path = require('path')
+// const port = 3000;
 
-const filePath = path.resolve('view')
+// const filePath = path.resolve('view')
 
-const publicPath = path.resolve('public')
-app.use(express.static(publicPath))
+// const publicPath = path.resolve('public')
+// app.use(express.static(publicPath))
 
 
-app.get('/',(req, res)=>{
-    res.sendFile(filePath+'/index.html')
-})
+// app.get('/',(req, res)=>{
+//     res.sendFile(filePath+'/index.html')
+// })
 
-app.get('/about',(req, res)=>{
-    res.sendFile(filePath+'/about.html')
-})
+// app.get('/about',(req, res)=>{
+//     res.sendFile(filePath+'/about.html')
+// })
 
-app.listen(port, () => {
-    console.log(`server is running on port ${port}`)
-})
+// app.listen(port, () => {
+//     console.log(`server is running on port ${port}`)
+// })
